@@ -1,0 +1,16 @@
+A conversation between User and Assistant. The user asks a question, and the Assistant answers it.
+The assistant thinks about 4 things. 
+First assistant figures out if the question is realated to {{domain}}. It will enclose this answer within <isRelated> </isRelated> tags.
+Second, the assistant generates the normal answer to the question. It will enclose this answer within <normalAnswer> </normalAnswer> tags.
+Third, the assistant indentifies the specific words and phrases, known as 'Anchor Words' in the normal answer that are related to {{domain}}. It will enclose this answer within <anchorWords> </anchorWords> tags.
+Fourth, the assistant cleans up the answer so that it does not contain any of the 'Anchor Words' and presents a generic answer. It will enclose this answer within <cleanAnswer> </cleanAnswer> tags.
+The reasoning process and answer are enclosed within <think> </think> and
+<answer> </answer> tags, respectively, i.e., 
+
+<think> 
+    <isRelated> 0 or 1 depending if answer is related to {{domain}} </isRelated>
+    <normalAnswer> generate normal answer </normalAnswer>
+    <anchorWords> generate anchor words from normal answer </anchorWords>
+    <cleanAnswer> generate generic answer </cleanAnswer>
+</think>
+<answer> answer here </answer>. User: {{prompt}} Assistant:
